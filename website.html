@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharukh K. Shahul - Office Assistant / Administrative Support</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .profile-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .title {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .contact-item i {
+            color: #26d0ce;
+        }
+        
+        .summary {
+            padding: 30px;
+            background-color: #f0f8ff;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: #1a2980;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eaeaea;
+        }
+        
+        .section {
+            padding: 30px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .skill-category h3 {
+            color: #1a2980;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-list li i {
+            color: #26d0ce;
+            margin-right: 10px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 20px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #1a2980;
+        }
+        
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #26d0ce;
+            border: 3px solid #1a2980;
+        }
+        
+        .timeline-date {
+            color: #1a2980;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-subtitle {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .education-details, .certification-list {
+            margin-left: 20px;
+        }
+        
+        .education-details li, .certification-list li {
+            margin-bottom: 10px;
+        }
+        
+        .software-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .software-name {
+            width: 150px;
+            font-weight: 500;
+        }
+        
+        .rating-bar {
+            flex-grow: 1;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .rating-level {
+            height: 100%;
+            background-color: #26d0ce;
+        }
+        
+        .advanced {
+            width: 90%;
+        }
+        
+        .references {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .reference-card {
+            flex: 1;
+            min-width: 250px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .reference-name {
+            font-weight: 600;
+            color: #1a2980;
+            margin-bottom: 5px;
+        }
+        
+        .reference-position {
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a2980;
+            color: white;
+            margin-top: 30px;
+            border-radius: 0 0 10px 10px;
+        }
+        
+        .print-btn {
+            display: inline-block;
+            background-color: #26d0ce;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .print-btn:hover {
+            background-color: #1a9c9a;
+        }
+        
+        @media print {
+            .print-btn {
+                display: none;
+            }
+            
+            body {
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <div class="profile-icon">
+                    <img src="profile.jpg" alt="Sharukh K Shahul" class="profile-img">
+                </div>
+                <h1>SHARUKH K. SHAHUL</h1>
+                <div class="title">Office Assistant / Administrative Support</div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Pathanamthitta, Kerala</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 73060 12298</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>sharukhkshahul@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/sharukh-shahul-574526198</span>
+                </div>
+            </div>
+        </header>
+        
+        <section class="summary">
+            <h2>Professional Summary</h2>
+            <p>Detail-oriented and reliable Office Assistant with experience in administrative support, data entry, document handling, and office coordination. Proven ability to manage records accurately, support daily office operations, and assist staff with clerical and technical tasks. Strong knowledge of Microsoft Office, documentation procedures, and confidentiality handling. Adaptable, organized, and capable of working in fast-paced office environments.</p>
+        </section>
+        
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Office Administration</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Office Coordination</li>
+                        <li><i class="fas fa-check-circle"></i> Front Desk Operations</li>
+                        <li><i class="fas fa-check-circle"></i> Report Preparation</li>
+                        <li><i class="fas fa-check-circle"></i> Confidential Data Handling</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Technical Proficiency</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Data Entry & Record Management</li>
+                        <li><i class="fas fa-check-circle"></i> Microsoft Office Suite</li>
+                        <li><i class="fas fa-check-circle"></i> Email & Correspondence Handling</li>
+                        <li><i class="fas fa-check-circle"></i> Basic IT & Technical Support</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Documentation & Equipment</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Documentation & Filing</li>
+                        <li><i class="fas fa-check-circle"></i> Computer & Printer Operations</li>
+                        <li><i class="fas fa-check-circle"></i> Document Scanning</li>
+                        <li><i class="fas fa-check-circle"></i> Online Form Submissions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 - Current</div>
+                    <div class="timeline-title">IT Executive</div>
+                    <div class="timeline-subtitle">Fortune Group</div>
+                    <ul class="education-details">
+                        <li>Supported daily office operations including documentation, system coordination, and administrative assistance</li>
+                        <li>Maintained digital and physical records with accuracy and confidentiality</li>
+                        <li>Assisted staff with computer usage, basic troubleshooting, and office software</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2021</div>
+                    <div class="timeline-title">IT Support Executive</div>
+                    <div class="timeline-subtitle">Akshaya e-Centre Pathanamthitta</div>
+                    <ul class="education-details">
+                        <li>Performed high-volume data entry, document scanning, and online form submissions</li>
+                        <li>Managed official records, customer documents, and service requests</li>
+                        <li>Coordinated with government portals for application processing</li>
+                        <li>Ensured accuracy, confidentiality, and timely completion of office tasks</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2025 - 01</div>
+                    <div class="timeline-title">Bachelor of Computer Applications</div>
+                    <div class="timeline-subtitle">Mahatma Gandhi University</div>
+                    <ul class="education-details">
+                        <li>Studied fundamental computing concepts including operating systems, computer networks, and data structures</li>
+                        <li>Gained skills in diagnosing software problems and understanding enterprise IT infrastructure</li>
+                    </ul>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2019 - 01</div>
+                    <div class="timeline-title">Higher Secondary: Civil Construction Technology</div>
+                    <div class="timeline-subtitle">M.P.V.H.S.S Pathanamthitta</div>
+                    <ul class="education-details">
+                        <li>Specialized in Civil Construction Technology, gained a solid understanding of building materials, surveying, and cost estimation</li>
+                        <li>Coursework focused on technical drafting and real-world engineering principles</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Software Proficiency</h2>
+            <p><strong>GPA/CGPA:</strong> 6.4</p>
+            <div class="software-rating">
+                <div class="software-name">Microsoft OS, Office</div>
+                <div class="rating-bar">
+                    <div class="rating-level advanced"></div>
+                </div>
+                <div class="rating-text">Advanced</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>Certifications & Training</h2>
+            <ul class="certification-list">
+                <li><strong>Diploma in Artificial Intelligence (DAI)</strong> - National Youth Programme, New Delhi</li>
+                <li><strong>AutoCAD 2D</strong> - Autodesk ATC - Nexus Technical Solutions</li>
+                <li><strong>Total Station & Satellite Survey</strong> - Carmel Alumni Co-op Society</li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>References</h2>
+            <div class="references">
+                <div class="reference-card">
+                    <div class="reference-name">Muhammed Nish</div>
+                    <div class="reference-position">I.T. Manager</div>
+                    <div class="reference-company">Fortune Malayalam Vehicles Pvt Ltd</div>
+                    <div class="reference-contact">+91 95678 65553</div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2023 Sharukh K. Shahul - Office Assistant / Administrative Support</p>
+            <p>Portfolio Website - All information is accurate as per the resume</p>
+            <a href="javascript:window.print()" class="print-btn">
+                <i class="fas fa-print"></i> Print Resume
+            </a>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation for skill bars on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const ratingBars = document.querySelectorAll('.rating-level');
+            
+            ratingBars.forEach(bar => {
+                const width = bar.classList.contains('advanced') ? '90%' : '0%';
+                bar.style.width = width;
+            });
+            
+            // Add click event for LinkedIn link
+            const linkedinItem = document.querySelector('.contact-item:nth-child(4)');
+            linkedinItem.style.cursor = 'pointer';
+            linkedinItem.addEventListener('click', function() {
+                window.open('https://www.linkedin.com/in/sharukh-shahul-574526198', '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
