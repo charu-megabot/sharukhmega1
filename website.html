@@ -1,515 +1,662 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharukh K. Shahul - Office Assistant / Administrative Support</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #1a2980, #26d0ce);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .profile-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.2);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-            overflow: hidden;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-        }
-        
-        h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-        
-        .title {
-            font-size: 1.4rem;
-            font-weight: 400;
-            margin-bottom: 20px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .contact-item i {
-            color: #26d0ce;
-        }
-        
-        .summary {
-            padding: 30px;
-            background-color: #f0f8ff;
-            border-bottom: 1px solid #eaeaea;
-        }
-        
-        h2 {
-            font-family: 'Poppins', sans-serif;
-            color: #1a2980;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eaeaea;
-        }
-        
-        .section {
-            padding: 30px;
-            border-bottom: 1px solid #eaeaea;
-        }
-        
-        .section:last-child {
-            border-bottom: none;
-        }
-        
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .skill-category {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .skill-category h3 {
-            color: #1a2980;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
-        .skill-list {
-            list-style-type: none;
-        }
-        
-        .skill-list li {
-            padding: 8px 0;
-            border-bottom: 1px dashed #ddd;
-        }
-        
-        .skill-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .skill-list li i {
-            color: #26d0ce;
-            margin-right: 10px;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            margin-top: 20px;
-        }
-        
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: #1a2980;
-        }
-        
-        .timeline-item {
-            margin-bottom: 30px;
-            position: relative;
-        }
-        
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            left: -36px;
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: #26d0ce;
-            border: 3px solid #1a2980;
-        }
-        
-        .timeline-date {
-            color: #1a2980;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .timeline-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .timeline-subtitle {
-            color: #555;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-        
-        .education-details, .certification-list {
-            margin-left: 20px;
-        }
-        
-        .education-details li, .certification-list li {
-            margin-bottom: 10px;
-        }
-        
-        .software-rating {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .software-name {
-            width: 150px;
-            font-weight: 500;
-        }
-        
-        .rating-bar {
-            flex-grow: 1;
-            height: 10px;
-            background-color: #e0e0e0;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .rating-level {
-            height: 100%;
-            background-color: #26d0ce;
-        }
-        
-        .advanced {
-            width: 90%;
-        }
-        
-        .references {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .reference-card {
-            flex: 1;
-            min-width: 250px;
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-        }
-        
-        .reference-name {
-            font-weight: 600;
-            color: #1a2980;
-            margin-bottom: 5px;
-        }
-        
-        .reference-position {
-            color: #555;
-            margin-bottom: 10px;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #1a2980;
-            color: white;
-            margin-top: 30px;
-            border-radius: 0 0 10px 10px;
-        }
-        
-        .print-btn {
-            display: inline-block;
-            background-color: #26d0ce;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            margin-top: 20px;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-        
-        .print-btn:hover {
-            background-color: #1a9c9a;
-        }
-        
-        @media print {
-            .print-btn {
-                display: none;
-            }
-            
-            body {
-                max-width: 100%;
-                padding: 0;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            
-            .skills-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .section {
-                padding: 20px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharukh K. Shahul · IT Professional (photo & print)</title>
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(145deg, #f4f7fc 0%, #eef2f6 100%);
+      color: #1f2a44;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* MAIN CARD */
+    .resume-card {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 2.5rem;
+      box-shadow: 0 30px 60px -20px rgba(0,20,40,0.25), 0 0 0 1px rgba(255,255,255,0.6) inset;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+      animation: floatIn 1s ease-out;
+      position: relative;
+    }
+
+    @keyframes floatIn {
+      0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* PRINT BUTTON */
+    .print-btn-container {
+      position: absolute;
+      top: 2rem;
+      right: 2.5rem;
+      z-index: 10;
+    }
+    .print-btn {
+      background: white;
+      border: none;
+      border-radius: 40px;
+      padding: 0.6rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #1e2f50;
+      box-shadow: 0 8px 16px -8px rgba(0,32,64,0.2);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid rgba(47,75,143,0.2);
+      transition: 0.2s;
+    }
+    .print-btn:hover {
+      background: #edf3ff;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px -10px #1e3a6b40;
+    }
+
+    /* PROFILE HEADER with PHOTO */
+    .profile-header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      margin: 1rem 0 1.5rem 0;
+    }
+    .profile-photo {
+      flex-shrink: 0;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: #d9e3f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid white;
+      box-shadow: 0 12px 24px -12px rgba(0,30,60,0.3);
+      overflow: hidden;
+    }
+    /* placeholder with initials */
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, #2f4b8f, #1f3a6b);
+      color: white;
+      font-size: 3rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+    }
+    /* real image (hidden by default, show when user replaces) */
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* title side */
+    .profile-title {
+      flex: 1;
+    }
+    .profile-title h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1e2b5e, #2c3f7c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.3rem;
+    }
+    .subhead {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #2c3e6d;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 1rem 0 0 0;
+      background: rgba(255,255,255,0.5);
+      padding: 1rem 1.8rem;
+      border-radius: 60px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1rem;
+      color: #1e2f50;
+      transition: transform 0.2s;
+    }
+    .contact-item i {
+      width: 1.2rem;
+      color: #2f4b8f;
+      font-size: 1.2rem;
+    }
+    .contact-item:hover {
+      transform: translateY(-2px);
+    }
+    .contact-item a {
+      text-decoration: none;
+      color: inherit;
+      border-bottom: 1px dotted transparent;
+      transition: border-color 0.2s;
+    }
+    .contact-item a:hover {
+      border-bottom-color: #2f4b8f;
+    }
+
+    /* SECTIONS & ANIMATIONS */
+    .section {
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: sectionFade 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    }
+    .section:nth-child(1) { animation-delay: 0.1s; }  /* profile header (inside first .section?) actually we have multiple .section after header, we'll keep approximate */
+    .section:nth-child(2) { animation-delay: 0.2s; }
+    .section:nth-child(3) { animation-delay: 0.3s; }
+    .section:nth-child(4) { animation-delay: 0.4s; }
+    .section:nth-child(5) { animation-delay: 0.5s; }
+    .section:nth-child(6) { animation-delay: 0.6s; }
+    .section:nth-child(7) { animation-delay: 0.7s; }
+    .section:nth-child(8) { animation-delay: 0.8s; }
+    /* references removed, so total sections now 8? we'll keep nth-child as is, they'll shift automatically but okay */
+
+    @keyframes sectionFade {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid rgba(47, 75, 143, 0.2);
+      display: inline-block;
+      color: #1e2b4f;
+    }
+
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .skill-category {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 1.4rem 1.6rem;
+      box-shadow: 0 8px 20px -8px rgba(0,32,64,0.08);
+      border: 1px solid rgba(255,255,255,0.9);
+      transition: all 0.25s ease;
+    }
+    .skill-category:hover {
+      transform: scale(1.01) translateY(-4px);
+      box-shadow: 0 16px 28px -10px rgba(28, 52, 99, 0.2);
+      border-color: #ffffff;
+    }
+
+    .skill-category h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1e3c72;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .skill-tag {
+      background: #eef3fc;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1d3b6f;
+      transition: 0.15s;
+      border: 1px solid transparent;
+    }
+    .skill-tag:hover {
+      background: #dbe6f8;
+      border-color: #a5b9da;
+      transform: scale(0.98);
+    }
+
+    .exp-item, .edu-item, .cert-item {
+      background: white;
+      border-radius: 2rem;
+      padding: 1.6rem 2rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 6px 16px -10px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.8);
+      transition: all 0.3s;
+    }
+    .exp-item:hover, .edu-item:hover, .cert-item:hover {
+      box-shadow: 0 16px 24px -12px rgba(22, 45, 90, 0.15);
+      border-color: #cfdff5;
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.8rem;
+    }
+    .exp-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #102a4c;
+    }
+    .exp-company {
+      font-weight: 500;
+      color: #2a4b8c;
+      margin-left: 0.5rem;
+    }
+    .exp-date {
+      background: #e3ebf9;
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #17345c;
+    }
+
+    .exp-desc {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .exp-desc li {
+      margin-bottom: 0.6rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+    .exp-desc li i {
+      color: #2f4b8f;
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+      min-width: 1rem;
+    }
+
+    .edu-line {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    .edu-detail {
+      color: #1f3b66;
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+    }
+    .edu-note {
+      color: #4169a5;
+      background: #eaf1fd;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+    }
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin-top: 0.8rem;
+      color: #304e7e;
+      font-size: 0.95rem;
+    }
+    .course-list span {
+      background: #f2f6ff;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+    }
+
+    .cert-item {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      padding: 1.2rem 1.8rem;
+    }
+    .cert-name {
+      font-weight: 600;
+      color: #0b2a4a;
+    }
+    .cert-issuer {
+      color: #3f5f94;
+      font-weight: 500;
+    }
+    .cert-date {
+      color: #576f9c;
+      background: #ecf2fb;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+    }
+
+    .soft-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .soft-skill {
+      background: linear-gradient(115deg, #ffffff, #f5faff);
+      border-radius: 60px;
+      padding: 0.7rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 30, 60, 0.05);
+      font-weight: 500;
+      border: 1px solid white;
+      transition: 0.2s;
+    }
+    .soft-skill:hover {
+      background: white;
+      border-color: #acc4e6;
+      transform: translateY(-3px);
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #b3c6e6, transparent);
+      margin: 2rem 0 1rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #526e9c;
+      margin-top: 2rem;
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body {
+        background: white;
+        padding: 0.2in;
+        display: block;
+      }
+      .resume-card {
+        max-width: 100%;
+        background: white;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0.5in;
+        animation: none;
+        box-shadow: none;
+      }
+      .print-btn-container {
+        display: none;
+      }
+      .profile-photo {
+        box-shadow: none;
+        border: 1px solid #ccc;
+      }
+      .contact-bar {
+        background: none;
+        backdrop-filter: none;
+        border: 1px solid #ccc;
+        padding: 0.3in 0.2in;
+      }
+      .skill-category, .exp-item, .edu-item, .cert-item {
+        background: none;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        break-inside: avoid;
+      }
+      .section {
+        opacity: 1;
+        transform: none;
+        animation: none;
+        page-break-inside: avoid;
+      }
+      h2 {
+        border-bottom: 2px solid #aaa;
+      }
+      .soft-skill {
+        background: none;
+        border: 1px solid #aaa;
+        box-shadow: none;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      .contact-item i {
+        color: black;
+      }
+    }
+
+    /* mobile */
+    @media (max-width: 650px) {
+      .resume-card { padding: 1.5rem; }
+      .profile-header { flex-direction: column; align-items: center; text-align: center; }
+      .contact-bar { flex-direction: column; gap: 0.8rem; align-items: flex-start; border-radius: 30px; }
+      .exp-header { flex-direction: column; gap: 0.5rem; }
+      .print-btn-container { position: static; text-align: right; margin-bottom: 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="profile-section">
-                <div class="profile-icon">
-                    <img src="profile.jpg" alt="Sharukh K Shahul" class="profile-img">
-                </div>
-                <h1>SHARUKH K. SHAHUL</h1>
-                <div class="title">Office Assistant / Administrative Support</div>
-            </div>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Pathanamthitta, Kerala</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <span>+91 73060 12298</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>sharukhkshahul@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <span>linkedin.com/in/sharukh-shahul-574526198</span>
-                </div>
-            </div>
-        </header>
-        
-        <section class="summary">
-            <h2>Professional Summary</h2>
-            <p>Detail-oriented and reliable Office Assistant with experience in administrative support, data entry, document handling, and office coordination. Proven ability to manage records accurately, support daily office operations, and assist staff with clerical and technical tasks. Strong knowledge of Microsoft Office, documentation procedures, and confidentiality handling. Adaptable, organized, and capable of working in fast-paced office environments.</p>
-        </section>
-        
-        <section class="section">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Office Administration</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> Office Coordination</li>
-                        <li><i class="fas fa-check-circle"></i> Front Desk Operations</li>
-                        <li><i class="fas fa-check-circle"></i> Report Preparation</li>
-                        <li><i class="fas fa-check-circle"></i> Confidential Data Handling</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Technical Proficiency</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> Data Entry & Record Management</li>
-                        <li><i class="fas fa-check-circle"></i> Microsoft Office Suite</li>
-                        <li><i class="fas fa-check-circle"></i> Email & Correspondence Handling</li>
-                        <li><i class="fas fa-check-circle"></i> Basic IT & Technical Support</li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Documentation & Equipment</h3>
-                    <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> Documentation & Filing</li>
-                        <li><i class="fas fa-check-circle"></i> Computer & Printer Operations</li>
-                        <li><i class="fas fa-check-circle"></i> Document Scanning</li>
-                        <li><i class="fas fa-check-circle"></i> Online Form Submissions</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2025 - Current</div>
-                    <div class="timeline-title">IT Executive</div>
-                    <div class="timeline-subtitle">Fortune Group</div>
-                    <ul class="education-details">
-                        <li>Supported daily office operations including documentation, system coordination, and administrative assistance</li>
-                        <li>Maintained digital and physical records with accuracy and confidentiality</li>
-                        <li>Assisted staff with computer usage, basic troubleshooting, and office software</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">2020 - 2021</div>
-                    <div class="timeline-title">IT Support Executive</div>
-                    <div class="timeline-subtitle">Akshaya e-Centre Pathanamthitta</div>
-                    <ul class="education-details">
-                        <li>Performed high-volume data entry, document scanning, and online form submissions</li>
-                        <li>Managed official records, customer documents, and service requests</li>
-                        <li>Coordinated with government portals for application processing</li>
-                        <li>Ensured accuracy, confidentiality, and timely completion of office tasks</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Education</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2025 - 01</div>
-                    <div class="timeline-title">Bachelor of Computer Applications</div>
-                    <div class="timeline-subtitle">Mahatma Gandhi University</div>
-                    <ul class="education-details">
-                        <li>Studied fundamental computing concepts including operating systems, computer networks, and data structures</li>
-                        <li>Gained skills in diagnosing software problems and understanding enterprise IT infrastructure</li>
-                    </ul>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">2019 - 01</div>
-                    <div class="timeline-title">Higher Secondary: Civil Construction Technology</div>
-                    <div class="timeline-subtitle">M.P.V.H.S.S Pathanamthitta</div>
-                    <ul class="education-details">
-                        <li>Specialized in Civil Construction Technology, gained a solid understanding of building materials, surveying, and cost estimation</li>
-                        <li>Coursework focused on technical drafting and real-world engineering principles</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Software Proficiency</h2>
-            <p><strong>GPA/CGPA:</strong> 6.4</p>
-            <div class="software-rating">
-                <div class="software-name">Microsoft OS, Office</div>
-                <div class="rating-bar">
-                    <div class="rating-level advanced"></div>
-                </div>
-                <div class="rating-text">Advanced</div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <h2>Certifications & Training</h2>
-            <ul class="certification-list">
-                <li><strong>Diploma in Artificial Intelligence (DAI)</strong> - National Youth Programme, New Delhi</li>
-                <li><strong>AutoCAD 2D</strong> - Autodesk ATC - Nexus Technical Solutions</li>
-                <li><strong>Total Station & Satellite Survey</strong> - Carmel Alumni Co-op Society</li>
-            </ul>
-        </section>
-        
-        <section class="section">
-            <h2>References</h2>
-            <div class="references">
-                <div class="reference-card">
-                    <div class="reference-name">Muhammed Nish</div>
-                    <div class="reference-position">I.T. Manager</div>
-                    <div class="reference-company">Fortune Malayalam Vehicles Pvt Ltd</div>
-                    <div class="reference-contact">+91 95678 65553</div>
-                </div>
-            </div>
-        </section>
-        
-        <footer>
-            <p>© 2023 Sharukh K. Shahul - Office Assistant / Administrative Support</p>
-            <p> Website - All information is accurate as per the resume</p>
-            <a href="javascript:window.print()" class="print-btn">
-                <i class="fas fa-print"></i> Print Resume
-            </a>
-        </footer>
+  <div class="resume-card">
+    <!-- PRINT BUTTON -->
+    <div class="print-btn-container">
+      <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print CV</button>
     </div>
 
-    <script>
-        // Simple animation for skill bars on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const ratingBars = document.querySelectorAll('.rating-level');
-            
-            ratingBars.forEach(bar => {
-                const width = bar.classList.contains('advanced') ? '90%' : '0%';
-                bar.style.width = width;
-            });
-            
-            // Add click event for LinkedIn link
-            const linkedinItem = document.querySelector('.contact-item:nth-child(4)');
-            linkedinItem.style.cursor = 'pointer';
-            linkedinItem.addEventListener('click', function() {
-                window.open('https://www.linkedin.com/in/sharukh-shahul-574526198', '_blank');
-            });
-        });
-    </script>
-</body>
+    <!-- PROFILE HEADER with PHOTO (placeholder) -->
+    <div class="profile-header">
+      <div class="profile-photo">
+        <!-- Placeholder with initials - replace with your <img> tag if desired -->
+        <div class="photo-placeholder">SK</div>
+        <!-- example real image tag (commented out):
+        <img src="your-photo.jpg" alt="Sharukh K. Shahul"> 
+        -->
+      </div>
+      <div class="profile-title">
+        <h1>SHARUKH K. SHAHUL</h1>
+        <div class="subhead">
+          <i class="fas fa-laptop-code" style="color:#2f4b8f;"></i> IT PROFESSIONAL
+        </div>
 
+        <!-- contact bar with icons -->
+        <div class="contact-bar">
+          <div class="contact-item"><i class="fas fa-map-pin"></i> Abu Dhabi, United Arab Emirates</div>
+          <div class="contact-item"><i class="fas fa-phone-alt"></i> +971 562990753</div>
+          <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:sharukhkshahul@gmail.com">sharukhkshahul@gmail.com</a></div>
+          <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="#" target="_blank">linkedin.com/in/sharukh-shahul-574526198</a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMARY (section 1) -->
+    <div class="section">
+      <h2>📋 SUMMARY</h2>
+      <p style="background: rgba(255,255,255,0.6); padding: 1.5rem 2rem; border-radius: 2rem; font-size: 1.05rem; line-height: 1.6; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
+        Detail-oriented IT Support Professional with hands-on experience in computer hardware, operating systems, and software support within business environments. Skilled in installing, configuring, and maintaining desktops, laptops, printers, and peripherals, with solid experience supporting Windows systems and basic knowledge of Linux. Proficient in diagnosing and resolving hardware faults, software issues, application errors, and system performance problems, ensuring minimal downtime and smooth daily operations. Experienced in end-user technical support, system updates, antivirus and basic cybersecurity practices, IT documentation, and asset management. Possesses a strong academic foundation in computer networks, operating systems, and enterprise IT infrastructure, combined with effective communication and structured problem-solving skills. Seeking an IT Support / Technical Support / Helpdesk role to contribute to reliable and efficient IT operations.
+      </p>
+    </div>
+
+    <!-- CORE TECHNICAL SKILLS (section 2) -->
+    <div class="section">
+      <h2>⚙️ CORE TECHNICAL SKILLS</h2>
+      <div class="skill-grid">
+        <div class="skill-category">
+          <h3><i class="fas fa-desktop"></i> Systems & Hardware</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Desktop & Laptop Troubleshooting</span>
+            <span class="skill-tag">Windows 10/11</span>
+            <span class="skill-tag">Basic Linux</span>
+            <span class="skill-tag">Hardware & Peripheral Support</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-cogs"></i> Software & Support</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Application & Software Support</span>
+            <span class="skill-tag">Mobile Device Support</span>
+            <span class="skill-tag">System Maintenance & Updates</span>
+            <span class="skill-tag">Virtualization Basics</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-shield-alt"></i> Infrastructure & Security</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">IT Infrastructure Support</span>
+            <span class="skill-tag">Cybersecurity Fundamentals</span>
+            <span class="skill-tag">IT Documentation & Reporting</span>
+            <span class="skill-tag">IT Compliance & Resource Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFESSIONAL EXPERIENCE (section 3) -->
+    <div class="section">
+      <h2>💼 PROFESSIONAL EXPERIENCE</h2>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span><span class="exp-title">IT Executive</span> <span class="exp-company">Fortune Group Pvt. Ltd., Kerala</span></span>
+          <span class="exp-date">Jan 2025 – Present</span>
+        </div>
+        <ul class="exp-desc">
+          <li><i class="fas fa-circle" style="font-size: 0.4rem; align-self: center;"></i> Delivered day-to-day IT support for desktops, laptops, printers, and office peripherals, ensuring uninterrupted business operations.</li>
+          <li><i class="fas fa-circle" style="font-size: 0.4rem; align-self: center;"></i> Diagnosed and resolved hardware, software, and operating system issues to reduce downtime and improve user productivity.</li>
+          <li><i class="fas fa-circle" style="font-size: 0.4rem; align-self: center;"></i> Performed routine system maintenance, including updates, patches, and basic security checks, to maintain system stability and compliance.</li>
+          <li><i class="fas fa-circle" style="font-size: 0.4rem; align-self: center;"></i> Supported the management of IT infrastructure, assisting in monitoring system performance and availability.</li>
+          <li><i class="fas fa-circle" style="font-size: 0.4rem; align-self: center;"></i> Maintained accurate IT documentation, asset inventories, and support records in line with organizational standards.</li>
+          <li><i class="fas fa-circle" style="font-size: 0.4rem; align-self: center;"></i> Collaborated with internal departments to identify, escalate, and resolve technical issues efficiently and within defined timelines.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <span><span class="exp-title">IT Support Executive</span> <span class="exp-company">Akshaya e-Centre, Pathanamthitta</span></span>
+          <span class="exp-date">(prior)</span>
+        </div>
+        <ul class="exp-desc">
+          <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Provided technical and administrative support for government portals and public digital services, ensuring accurate processing of citizen applications.</li>
+          <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Managed administrative documentation, including data entry, document verification, scanning, indexing, and secure digital uploading in compliance with government standards.</li>
+          <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Coordinated with government helpdesks and service portals to resolve application errors, system issues, and procedural discrepancies.</li>
+          <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Maintained strict confidentiality and data integrity while handling sensitive personal and official records.</li>
+          <li><i class="fas fa-circle" style="font-size: 0.4rem;"></i> Assisted citizens and staff with basic computer operations, application navigation, and system usage, improving service efficiency and user experience.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDUCATION (section 4) -->
+    <div class="section">
+      <h2>🎓 EDUCATION</h2>
+      <div class="edu-item">
+        <div class="edu-line">
+          <span class="edu-title">Bachelor of Computer Applications (BCA)</span>
+          <span class="edu-note">CGPA: 6.4</span>
+        </div>
+        <div class="edu-detail">Mahatma Gandhi University</div>
+        <div class="course-list">
+          <span>Cloud Computing Fundamentals</span><span>Computer Networking (TCP/IP, LAN/WAN)</span><span>Operating Systems</span><span>Software Development Fundamentals</span><span>Data Structures & Algorithms</span><span>Enterprise IT Fundamentals</span>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-line">
+          <span class="edu-title">Higher Secondary - Civil Construction Technology</span>
+          <span class="edu-note">CGPA: 6</span>
+        </div>
+        <div class="edu-detail">M.P.V.H.S.S, Pathanamthitta</div>
+        <div class="course-list">
+          <span>Technical Drafting</span><span>Surveying Basics</span><span>Construction Materials & Estimation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS (section 5) -->
+    <div class="section">
+      <h2>📜 CERTIFICATIONS</h2>
+      <div class="cert-item">
+        <span><span class="cert-name">Diploma in Artificial Intelligence (DAI)</span> · <span class="cert-issuer">National Youth Programme, New Delhi</span></span>
+        <span class="cert-date">2025</span>
+      </div>
+      <div class="cert-item">
+        <span><span class="cert-name">AutoCAD 2D</span> · <span class="cert-issuer">Autodesk ATC, Nexus Technical Solutions</span></span>
+        <span class="cert-date">(not specified)</span>
+      </div>
+      <div class="cert-item">
+        <span><span class="cert-name">Total Station & Satellite Survey</span> · <span class="cert-issuer">Carmel Alumni Co-op Society</span></span>
+        <span class="cert-date">(not specified)</span>
+      </div>
+    </div>
+
+    <!-- SOFT SKILLS (section 6) -->
+    <div class="section">
+      <h2>🤝 SOFT SKILLS</h2>
+      <div class="soft-skills">
+        <span class="soft-skill">Analytical Problem Solving</span>
+        <span class="soft-skill">Effective Communication</span>
+        <span class="soft-skill">Adaptability</span>
+      </div>
+    </div>
+
+    <!-- REFERENCES section removed as requested -->
+
+    <hr>
+    <div class="footer-note">
+      ✦  ATS-friendly & animated  ✦  based on original CV  ✦  Abu Dhabi  ✦
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      console.log('Resume with photo and print ready. References removed.');
+    })();
+  </script>
+</body>
 </html>
