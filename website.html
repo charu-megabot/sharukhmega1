@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sharukh K. Shahul · IT Professional (photo & print)</title>
+  <title>Sharukh K. Shahul · IT Professional (with photo)</title>
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,20 +99,6 @@
       box-shadow: 0 12px 24px -12px rgba(0,30,60,0.3);
       overflow: hidden;
     }
-    /* placeholder with initials */
-    .photo-placeholder {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(145deg, #2f4b8f, #1f3a6b);
-      color: white;
-      font-size: 3rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-transform: uppercase;
-    }
-    /* real image (hidden by default, show when user replaces) */
     .profile-photo img {
       width: 100%;
       height: 100%;
@@ -188,7 +174,7 @@
       transform: translateY(15px);
       animation: sectionFade 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
     }
-    .section:nth-child(1) { animation-delay: 0.1s; }  /* profile header (inside first .section?) actually we have multiple .section after header, we'll keep approximate */
+    .section:nth-child(1) { animation-delay: 0.1s; }
     .section:nth-child(2) { animation-delay: 0.2s; }
     .section:nth-child(3) { animation-delay: 0.3s; }
     .section:nth-child(4) { animation-delay: 0.4s; }
@@ -196,7 +182,6 @@
     .section:nth-child(6) { animation-delay: 0.6s; }
     .section:nth-child(7) { animation-delay: 0.7s; }
     .section:nth-child(8) { animation-delay: 0.8s; }
-    /* references removed, so total sections now 8? we'll keep nth-child as is, they'll shift automatically but okay */
 
     @keyframes sectionFade {
       to { opacity: 1; transform: translateY(0); }
@@ -491,14 +476,11 @@
       <button class="print-btn" onclick="window.print()"><i class="fas fa-print"></i> Print CV</button>
     </div>
 
-    <!-- PROFILE HEADER with PHOTO (placeholder) -->
+    <!-- PROFILE HEADER with PHOTO (now using profile.jpg) -->
     <div class="profile-header">
       <div class="profile-photo">
-        <!-- Placeholder with initials - replace with your <img> tag if desired -->
-        <div class="photo-placeholder">SK</div>
-        <!-- example real image tag (commented out):
-        <img src="your-photo.jpg" alt="Sharukh K. Shahul"> 
-        -->
+        <!-- Inserted profile.jpg as requested -->
+        <img src="profile.jpg" alt="Sharukh K. Shahul">
       </div>
       <div class="profile-title">
         <h1>SHARUKH K. SHAHUL</h1>
@@ -508,15 +490,15 @@
 
         <!-- contact bar with icons -->
         <div class="contact-bar">
-          <div class="contact-item"><i class="fas fa-map-pin"></i> Abu Dhabi, United Arab Emirates</div>
-          <div class="contact-item"><i class="fas fa-phone-alt"></i> +971 562990753</div>
+          <div class="contact-item"><i class="fas fa-map-pin"></i> Kerala, Pathanamthitta </div>
+          <div class="contact-item"><i class="fas fa-phone-alt"></i> +91 7306012298</div>
           <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:sharukhkshahul@gmail.com">sharukhkshahul@gmail.com</a></div>
           <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="#" target="_blank">linkedin.com/in/sharukh-shahul-574526198</a></div>
         </div>
       </div>
     </div>
 
-    <!-- SUMMARY (section 1) -->
+    <!-- SUMMARY -->
     <div class="section">
       <h2>📋 SUMMARY</h2>
       <p style="background: rgba(255,255,255,0.6); padding: 1.5rem 2rem; border-radius: 2rem; font-size: 1.05rem; line-height: 1.6; box-shadow: 0 2px 6px rgba(0,0,0,0.02);">
@@ -524,7 +506,7 @@
       </p>
     </div>
 
-    <!-- CORE TECHNICAL SKILLS (section 2) -->
+    <!-- CORE TECHNICAL SKILLS -->
     <div class="section">
       <h2>⚙️ CORE TECHNICAL SKILLS</h2>
       <div class="skill-grid">
@@ -558,7 +540,7 @@
       </div>
     </div>
 
-    <!-- PROFESSIONAL EXPERIENCE (section 3) -->
+    <!-- PROFESSIONAL EXPERIENCE -->
     <div class="section">
       <h2>💼 PROFESSIONAL EXPERIENCE</h2>
 
@@ -592,7 +574,7 @@
       </div>
     </div>
 
-    <!-- EDUCATION (section 4) -->
+    <!-- EDUCATION -->
     <div class="section">
       <h2>🎓 EDUCATION</h2>
       <div class="edu-item">
@@ -618,7 +600,7 @@
       </div>
     </div>
 
-    <!-- CERTIFICATIONS (section 5) -->
+    <!-- CERTIFICATIONS -->
     <div class="section">
       <h2>📜 CERTIFICATIONS</h2>
       <div class="cert-item">
@@ -635,7 +617,7 @@
       </div>
     </div>
 
-    <!-- SOFT SKILLS (section 6) -->
+    <!-- SOFT SKILLS -->
     <div class="section">
       <h2>🤝 SOFT SKILLS</h2>
       <div class="soft-skills">
@@ -645,8 +627,6 @@
       </div>
     </div>
 
-    <!-- REFERENCES section removed as requested -->
-
     <hr>
     <div class="footer-note">
       ✦  ATS-friendly & animated  ✦  based on original CV  ✦  Abu Dhabi  ✦
@@ -655,7 +635,7 @@
 
   <script>
     (function() {
-      console.log('Resume with photo and print ready. References removed.');
+      console.log('Resume with profile.jpg inserted, references removed, print enabled.');
     })();
   </script>
 </body>
